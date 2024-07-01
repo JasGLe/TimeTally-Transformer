@@ -25,7 +25,14 @@ month: Month name for the scoring period.
 API Functionality
 
 The API endpoint /monthly-scores retrieves the total scores for a given society sorted by month. It accepts a query parameter for the society name, fetches the corresponding ID from the society table, and then calculates the total scores from the scores table grouped by month. Months are sorted chronologically through a CASE statement in the SQL query.
-
+'''javascript
+app.get('/monthly-scores', async (req, res) => {
+  const {societyName} = req.query;
+  try {
+    const societyQuery = `SELECT id FROM society WHERE name = $1`;
+    const societyRes = await pool.query(societyQuery, [societyName]);
+    const societyId = societyRes.rows[0].id;
+'''javascript
 **Front-end Integration**
 
 The front-end component utilizes HTML and Chart.js to display the data. Users input a society name, triggering a fetch request to the backend, which responds with the relevant scoring data. This data is then plotted using a bar chart that updates dynamically based on the input.
