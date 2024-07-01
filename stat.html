@@ -1,0 +1,55 @@
+<div>
+      <div style="width: 100%; display: flex; justify-content: space-between">
+        <input style="width: 100%" id="companyInput" type="text" placeholder="Enter the company name" />
+        <button onclick="displayData()">Display Data</button>
+      </div>
+      <canvas id="myChart"></canvas>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+      function displayData() {
+        if (window.chart) {
+          window.chart.destroy();
+        }
+        const companyName = document.getElementById('companyInput').value;
+        const months = [ 'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'];
+        const DATA_COUNT = 12;
+        fetch(`http://localhost:3000/monthly-scores?societyName=${encodeURIComponent(companyName)}`)
+          .then(response => response.json())
+          .then(data => {
+        console.log(data)
+            const months = data.map(entry => entry.month);
+            const scores = data.map(entry => entry.total_score);
+            const companyData = {
+              labels: months,
+              datasets: [
+                {
+                  label: `Score`,
+                  data: scores
+                }
+              ]
+            };
+            const ctx = document.getElementById('myChart');
+            const config = {
+              type: 'bar',
+              data: companyData,
+              options: {
+                responsive: true,
+                plugins: {
+                  legend: {
+                    position: 'top'
+                  },
+                  title: {
+                    display: true,
+                    text: `Score annuel de l'entreprise ${companyName} `
+                  }
+                }
+              }
+            };
+            window.chart = new Chart(ctx, config);
+          }).catch(e);
+      }
+    </script>
