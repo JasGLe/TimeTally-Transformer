@@ -1,6 +1,7 @@
 # TimeTally-Transformer
-**Project Overview**
-\n TimeTally Transformer is a robust SQL query tool designed to streamline the sorting and analysis of monthly performance scores. This tool is specifically tailored for enterprises needing accurate chronological order of month names for enhanced data reporting and analysis. Built using Node.js, Express, CORS, and PostgreSQL, this project provides a back-end setup to handle requests and aggregate performance data based on the society or company specified by the user.
+**Project Overview** 
+
+TimeTally Transformer is a robust SQL query tool designed to streamline the sorting and analysis of monthly performance scores. This tool is specifically tailored for enterprises needing accurate chronological order of month names for enhanced data reporting and analysis. Built using Node.js, Express, CORS, and PostgreSQL, this project provides a back-end setup to handle requests and aggregate performance data based on the society or company specified by the user.
 
 **Technical Setup**
 
