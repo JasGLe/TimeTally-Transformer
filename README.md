@@ -5,7 +5,7 @@ TimeTally Transformer is a robust SQL query tool designed to streamline the sort
 
 **Technical Setup**
 
-Node.js: As the JavaScript runtime, Node.js facilitates the backend services.
+Node.js: As the JavaScript runtime, Node.js facilitates the backend services.	
 Express: This minimalistic web framework structures our API's routing mechanisms.
 CORS (Cross-Origin Resource Sharing): Implemented to allow or restrict requested resources on a web server depending on where the HTTP request was initiated.
 PostgreSQL: Used for database management, storing societies and their respective scores.
@@ -32,7 +32,7 @@ app.get('/monthly-scores', async (req, res) => {
     const societyQuery = `SELECT id FROM society WHERE name = $1`;
     const societyRes = await pool.query(societyQuery, [societyName]);
     const societyId = societyRes.rows[0].id;
-'''javascript
+'''
 **Front-end Integration**
 
 The front-end component utilizes HTML and Chart.js to display the data. Users input a society name, triggering a fetch request to the backend, which responds with the relevant scoring data. This data is then plotted using a bar chart that updates dynamically based on the input.
