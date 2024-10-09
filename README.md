@@ -38,7 +38,9 @@ app.get('/monthly-scores', async (req, res) => {
 
 The front-end component utilizes HTML and Chart.js to display the data. Users input a society name, triggering a fetch request to the backend, which responds with the relevant scoring data. This data is then plotted using a bar chart that updates dynamically based on the input.
 
-https://github.com/JasGLe/TimeTally-Transformer/assets/115731171/da2a880e-a705-4e63-ad35-7d719db666c7
+
+
+https://github.com/user-attachments/assets/8117b295-d39a-43d1-9ee5-4fe06a22db93
 
 
 **Security and Deployment**
