@@ -43,10 +43,6 @@ The front-end component utilizes HTML and Chart.js to display the data. Users in
 https://github.com/user-attachments/assets/8117b295-d39a-43d1-9ee5-4fe06a22db93
 
 
-**Security and Deployment**
-
-Ensure to handle CORS appropriately, configure your database securely, and manage environment variables for sensitive information like database credentials. Consider deploying the application using a cloud service provider that supports Node.js environments.
-
 **Preventing SQL Injection**
 
 SQL injection is a common security vulnerability that can allow an attacker to interfere with the queries that an application makes to its database. To prevent SQL injection, TimeTally Transformer utilizes parameterized queries, one of the most effective ways to safeguard against this type of attack.
